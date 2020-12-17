@@ -72,4 +72,9 @@ def predict():
     return jsonify(str(output))
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(threaded=True, host='0.0.0.0', port=5000)
+
+
+
+# app_server = gevent.wsgi.WSGIServer(('127.0.0.1', 5000), app)
+# app_server.serve_forever()
